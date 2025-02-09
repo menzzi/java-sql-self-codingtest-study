@@ -1,4 +1,4 @@
-```java
+```sql
 SELECT company_code, founder,
 (SELECT COUNT(DISTINCT lead_manager_code) FROM Lead_Manager L WHERE C.company_code = L.company_code),
 (SELECT COUNT(DISTINCT senior_manager_code) FROM Senior_Manager S WHERE C.company_code = S.company_code),
