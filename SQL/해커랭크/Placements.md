@@ -1,0 +1,9 @@
+```SQL
+SELECT NAME
+FROM (SELECT F.ID, NAME, F.Friend_ID, SALARY 
+     FROM Students S JOIN Friends F ON S.ID = F.ID
+     JOIN Packages P ON F.ID = P.ID) T1
+JOIN Packages P2 ON T1.Friend_ID = P2.ID
+WHERE P2.SALARY > T1.SALARY
+ORDER BY P2.SALARY
+```
